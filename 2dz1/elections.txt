@@ -1,0 +1,35 @@
+5
+Washington 5
+John 0 no_vote
+George 0 no_vote
+Abe 0 no_vote
+Robert 0 no_vote
+Joseph 0 no_vote
+Miami 5
+Tomy 0 no_vote
+Linda 0 no_vote
+Laura 0 no_vote
+Jeff 0 no_vote
+Tom 0 no_vote
+Seattle 3
+Gabe 0 no_vote
+David 0 no_vote
+Mary 0 no_vote
+Detroit 4
+Donald 0 no_vote
+Charles 0 no_vote
+Thomas 0 no_vote
+Brian 0 no_vote
+Springfield 7
+Homer 0 no_vote
+Lenny 0 no_vote
+Carl 0 no_vote
+Marge 0 no_vote
+Skinner 0 no_vote
+Burns 0 no_vote
+Abu 0 no_vote
+3
+Hillary - 0
+Trump - 0
+Sanders - 0
+c
