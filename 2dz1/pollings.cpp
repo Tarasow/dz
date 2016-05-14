@@ -10,6 +10,7 @@ pollings::pollings(std::string a)
 
 pollings::~pollings()
 {
+	v.clear();
 }
 
 void pollings::adde(std::string a) {
@@ -30,25 +31,19 @@ void pollings::dele(std::string a) {
 }
 
 void pollings::printe(std::ostream& out) {
-	out << name << " " << v.size() << "\n";
-	for (int i = 0; i < v.size(); i++) out << v[i]->name << " " << v[i]->status << " " << v[i]->choosen << "\n";
+	out << name << "\t" << v.size() << "\n";
+	for (int i = 0; i < v.size(); i++) out << v[i]->name << "\t" << v[i]->status << "\t" << v[i]->choosen << "\n";
 }
 
 void pollings::ine(std::istream& in) {
-	in >> name;
 	int n;
-	in.ignore();
-	in >> n;
-	in.ignore();
+	in >> name >> n;
 	for (int i = 0; i < n; i++) {
 		std::string a;
 		in >> a;
 		adde(a);
-		in.ignore();
 		in >> v[i]->status;
-		in.ignore();
 		in >> v[i]->choosen;
-		in.ignore();
 	}
 }
 

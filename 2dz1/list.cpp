@@ -13,6 +13,8 @@ list::list()
 
 list::~list()
 {
+	c.clear();
+	p.clear();
 }
 
 void list::cs(char a) {
@@ -151,7 +153,10 @@ void list::liste(std::string a, std::ostream& out) {
 
 void list::listc(std::ostream&out) {
 	if (es == 'c') for (int i = 0; i < c.size(); i++) out << c[i]->name << "\n";
-	else if (es == 's' || es == 'f') for (int i = 0; i < c.size(); i++) c[i]->print(out);
+	else if (es == 's' || es == 'f') {
+		out << "Candidate:\tVotes:\n";
+		for (int i = 0; i < c.size(); i++) c[i]->print(out);
+	}
 	else out << "ERROR: there are no any candidates at this stage!\n";
 };
 
@@ -191,7 +196,7 @@ void list::printres(std::ostream& out) {
 				out << "NO WINNER: same number of votes!\n";
 				k = true;
 			}
-			if (!k) out << "Winner: " << c[c.size() - 1]->name << "\n";
+			if (!k) out << "Winner:\n";
 			else out << "Top candidates:\n";
 			int i = 1;
 			do {
@@ -289,14 +294,12 @@ void list::sif(std::ostream& out) {
 void list::lff(std::istream& in) {
 	int n;
 	in >> n;
-	in.ignore();
 	es = 'p';
 	for (int i = 0; i < n; i++) {
 		addp(" ");
 		p[i]->ine(in);
 	}
 	in >> n;
-	in.ignore();
 	es = 'c';
 	for (int i = 0; i < n; i++) {
 		addc(" ");
