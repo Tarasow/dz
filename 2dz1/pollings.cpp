@@ -10,14 +10,13 @@ pollings::pollings(std::string a)
 
 pollings::~pollings()
 {
-	v.clear();
 }
 
 void pollings::adde(std::string a) {
 	bool k = false;
 	for (int i = 0; i < v.size() && !k; i++) if (v[i]->name == a) k = true;
-	if (!k) v.push_back(std::shared_ptr<elector>(new elector(a)));
-	else std::cout << "ERROR: there is such elector!\n";
+	if (!k) v.push_back(new elector(a));
+	else throw std::runtime_error("ERROR: there is such elector!\n");
 }
 
 void pollings::dele(std::string a) {
@@ -27,7 +26,7 @@ void pollings::dele(std::string a) {
 			v.erase(v.begin() + i);
 			k = true;
 		}
-	if (!k) std::cout << "ERROR: there isn't such elector!\n";
+	if (!k) throw std::runtime_error("ERROR: there isn't such elector!\n");
 }
 
 void pollings::printe(std::ostream& out) {

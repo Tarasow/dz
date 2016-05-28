@@ -7,7 +7,7 @@
 class pollings
 {
 	std::string name;
-	std::vector<std::shared_ptr<elector>> v;
+	std::vector<elector*> v;
 public:
 	pollings(std::string a);
 	~pollings();

@@ -2,21 +2,21 @@
 #include "elector.h"
 #include "pollings.h"
 #include "candidate.h"
+#include "es.h"
 #include <string>
 #include <vector>
-#include <memory>
 
 class list
 {
-	char es;
-	std::vector<std::shared_ptr<candidate>> c;
-	std::vector<std::shared_ptr<pollings>> p;
+	es status;
+	std::vector<candidate*> c;
+	std::vector<pollings*> p;
 public:
 	list();
 	~list();
 
-	void cs(char a);
-	void getstatus();
+	void cs(es a);
+	void getstatus(std::ostream& out);
 	void addp(std::string a);
 	void delp(std::string a);
 	void adde(std::string a, std::string b);
@@ -35,6 +35,5 @@ public:
 	void printel(std::string a, std::ostream& out);
 	void sif(std::ostream& out);
 	void lff(std::istream& in);
-	void reset(std::string a);
+	void reset(std::string a, std::ostream& out);
 };
-

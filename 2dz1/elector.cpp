@@ -23,7 +23,7 @@ void elector::vote(std::string a) {
 		status = true;
 		choosen = a;
 	}
-	else std::cout << "ERROR: elector can't vote twice\n";
+	else throw std::runtime_error("ERROR: elector can't vote twice\n");
 }
 
 void elector::elreset() {
